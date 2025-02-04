@@ -17,9 +17,15 @@ body {
     width: 100%;
 }
 
+section {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .section-content {
     width: 100%;
     margin: 0 auto 10vh;
+    overflow-x: hidden;
 }
 
 .section-title {
@@ -208,8 +214,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, .75fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
+    column-gap: 10px;
+    row-gap: 20px;
     width: 80%;
     margin: 0 auto;
 }
@@ -265,8 +271,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, .75fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
+    column-gap: 10px;
+    row-gap: 20px;
     width: 80%;
     margin: 0 auto;
 }
@@ -316,12 +322,11 @@ body {
 
 .project-description {
     line-height: 1.5;
-    /* padding-bottom: 1em;
-    margin-bottom: 1em; */
+    border-bottom: 2px solid rgba(0, 126, 167, 0.5);
 }
 
 .project-tech-row {
-    border-top: 2px solid rgba(0, 126, 167, 0.5);
+    /* border-top: 2px solid rgba(0, 126, 167, 0.5); */
     padding-top: 1em;
     display: flex;
     flex-direction: row;
@@ -340,6 +345,11 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .hero-content h1 {
+        margin: 0 auto 0.5em;
+        width: 80%;
+    }
+
     .about-section p {
         width: 80%;
     }
@@ -347,7 +357,8 @@ body {
     .tech-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, .75fr);
-        width: 95%;
+        column-gap: 20px;
+        width: 90%;
     }
 
     .tech-item {
