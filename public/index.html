@@ -9,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Favicon + Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -37,17 +38,17 @@
         <h1>Hi, I'm <span class="gradient-text">Zachariah Kersey</span></h1>
         <h2>I'm a <span id="typewriter"></span></h2>
         <div class="social-icons">
-          <a href="https://github.com/Z-Money" title><i class='bx bxl-github'></i></a>
-          <a href="mailto:zcode4768@gmail.com"><i class='bx bx-envelope'></i></a>
+          <a href="https://github.com/Z-Money" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+          <a href="mailto:zcode4768@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
         </div>
         <a href="#projects">See my Projects</a>
       </div>
     </section>
 
     <section id="about">
-      <div class="section-content about-section">
+      <div class="section-content about-section" data-aos="slide-left">
         <h1 class="section-title">About Me</h1>
-        <p>I'm a 16-year-old high school student passionate about technology and software development. I have gained a
+        <p>I'm a <span id="age">15</span>-year-old high school student passionate about technology and software development. I have gained a
           lot of experience with various programming languages over the years, but I am currently focused on Full Stack
           Development. From building web applications to computer programs, I enjoy exploring the vast capabilities of
           technology. I am constantly learning and expanding my knowledge with new technologies.
@@ -58,7 +59,7 @@
           web development and software creation.
         </p>
       </div>
-      <div class="section-content">
+      <div class="section-content" data-aos="slide-right">
         <h1 class="section-title">Technologies</h1>
         <div class="tech-container">
           <!-- HTML5, CSS3, JavaScript, Python, Java, C++, NodeJS, MongoDB, Git -->
@@ -171,13 +172,31 @@
     <!-- JS -->
     <script src="script.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      var typed = new Typed('#typewriter', {
+      let typed = new Typed('#typewriter', {
         strings: ['Student', 'Programmer', 'Runner'],
         typeSpeed: 150,
         backSpeed: 150,
         loop: true
       });
+      AOS.init();
+      function daysSince(date) {
+        const today = new Date();
+        const pastDate = new Date(date);
+
+        // Calculate the time difference in milliseconds
+        const timeDifference = today.getTime() - pastDate.getTime();
+
+        // Convert milliseconds to days
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        return daysDifference;
+      }
+
+      // Example usage:
+      let daysPassed = daysSince("2008-07-22");
+      document.querySelector("#age").innerText = Math.floor(daysPassed/365);
     </script>
 
   </body>

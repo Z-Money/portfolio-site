@@ -293,6 +293,10 @@ body {
     box-shadow: 0 0 1.2em rgba(0, 126, 167, 0.7);
 }
 
+.project-item:hover .project-title i {
+    transform: scale(1.25) rotate(45deg);
+}
+
 .project-title {
     display: flex;
     flex-direction: row;
@@ -307,6 +311,7 @@ body {
 .project-title i {
     font-size: 1.25em;
     transform: rotate(45deg);
+    transition: all .3s ease-in-out;
 }
 
 .project-description {
