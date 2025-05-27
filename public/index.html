@@ -51,7 +51,8 @@
     <section id="about">
       <div class="section-content about-section" data-aos="slide-left">
         <h1 class="section-title">About Me</h1>
-        <p>I'm a <span id="age">15</span>-year-old high school student passionate about technology and software development. I have gained a
+        <p>I'm a <span id="age">15</span>-year-old high school student passionate about technology and software
+          development. I have gained a
           lot of experience with various programming languages over the years, but I am currently focused on Full Stack
           Development. From building web applications to computer programs, I enjoy exploring the vast capabilities of
           technology. I am constantly learning and expanding my knowledge with new technologies.
@@ -164,13 +165,15 @@
             <img src="images/html5.svg" alt="">
             <img src="images/css3.svg" alt="">
             <img src="images/javascript.svg" alt="">
+            <img src="images/nodejs.svg" alt="">
+            <img src="images/mongodb.svg" alt="">
             <img src="images/git.svg" alt="">
           </div>
         </div>
       </div>
     </section>
 
-    <p style="padding-bottom: 250px"></p>
+    <p style="padding-bottom: 50px"></p>
 
     <!-- JS -->
     <script src="script.js"></script>
@@ -183,23 +186,20 @@
         backSpeed: 150,
         loop: true
       });
-      AOS.init();
-      function daysSince(date) {
-        const today = new Date();
-        const pastDate = new Date(date);
-
-        // Calculate the time difference in milliseconds
-        const timeDifference = today.getTime() - pastDate.getTime();
-
-        // Convert milliseconds to days
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-        return daysDifference;
+      AOS.init({ once: true });
+      function getAge(date) {
+        let today = new Date();
+        let birthDate = new Date(date);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        return age;
       }
 
-      // Example usage:
-      let daysPassed = daysSince("2008-07-22");
-      document.querySelector("#age").innerText = Math.floor(daysPassed/365);
+      let age = getAge("2008-07-22");
+      document.querySelector("#age").innerText = age;
     </script>
 
   </body>
