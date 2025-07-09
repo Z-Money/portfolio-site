@@ -102,6 +102,16 @@ section {
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 768px) {
+    .nav-links {
+        gap: 0.5em;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+    }
+}
+
 /* Home */
 .hero {
     display: flex;
@@ -353,7 +363,7 @@ section {
     .about-section p {
         width: 80%;
     }
-    
+
     .tech-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, .75fr);
@@ -374,4 +384,95 @@ section {
     .project-item {
         width: 90%;
     }
+}
+
+/* Contact */
+#contact {
+    padding-top: 10vh;
+}
+
+.contact-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.contact-form {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+.contact-form .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form .form-group label {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.contact-form .form-group .form-control {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 0.5em 0;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 126, 167, 0.5);
+    font-size: 1.15em;
+}
+
+.contact-form .form-group .form-control::placeholder {
+    color: #ccc;
+    font-size: 1.15rem;
+}
+
+.contact-form .form-group.contact-group {
+    grid-area: span 1 / span 2;
+}
+
+.contact-form .form-group.contact-group textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form .contact-form-btn {
+    grid-area: span 1 / span 2;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 0.5em 0;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid #044960;
+    font-size: 1.15em;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.contact-form .contact-form-btn:hover {
+    background-color: #fff;
+    color: #00171f;
+    border: 2px solid #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
