@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "zachariah-kersey",
     "public": "public",
     "ignore": [
       "firebase.json",
