@@ -89,6 +89,10 @@
             <p>JavaScript library for building dynamic user interfaces with reusable components.</p>
           </div>
           <div class="tech-item">
+            <span><img src="images/nextjs.svg" alt="">NextJS</span>
+            <p>React framework for building full-stack web applications with server-side rendering and static site generation.</p>
+          </div>
+          <div class="tech-item">
             <span><img src="images/nodejs.svg" alt="">NodeJS</span>
             <p>JavaScript runtime environment used for server-side development.</p>
           </div>
@@ -287,12 +291,36 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" placeholder="Message..." class="form-control" required></textarea>
           </div>
-          <button type="submit" class="contact-form-btn">Send</button>
+          <button type="submit" class="contact-form-btn"><span><i class='bx bx-paper-plane'></i> Send</span></button>
         </form>
       </div>
     </section>
 
-    <p style="padding-bottom: 50px"></p>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-title">
+          <a href="#home" class="footer-title-link">
+            <h2 class="footer-name">Zachariah <span>Kersey</span></h2>
+          </a>
+          <p class="footer-subtitle">Software Developer</p>
+        </div>
+        <div class="footer-social-icons">
+          <h2>Contact</h2>
+          <a href="https://github.com/Z-Money" target="_blank" aria-label="GitHub">
+            <i class='bx bxl-github'></i>
+            <span>Z-Money</span>
+          </a>
+          <a href="mailto:zcode4768@gmail.com" aria-label="Email">
+            <i class='bx bx-envelope'></i>
+            <span>zcode4768@gmail.com</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-copyright">
+        <p>&copy; <span id="current-year"></span> Zachariah Kersey. All rights reserved.</p>
+      </div>
+    </footer>
 
     <!-- JS -->
     <script src="script.js"></script>
@@ -320,6 +348,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         let age = getAge("2008-07-22");
         document.querySelector("#age").innerText = age;
+        document.querySelector("#current-year").innerText = new Date().getFullYear();
       });
 
     </script>
